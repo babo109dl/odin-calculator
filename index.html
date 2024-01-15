@@ -11,6 +11,7 @@
 <body>
 
     <div class="calculator">
+        <input type="text" value="">
         <div class="first-row">
             <button class="operator-add">+</button>
             <button class="digit-1">1</button>
@@ -31,9 +32,9 @@
         </div>
         <div class="fourth-row">
             <button class="operator-divide">/</button>
-            <button class="digit-4">4</button>
-            <button class="digit-5">5</button>
-            <button class="digit-6">6</button>
+            <button class="clear-button">CE</button>
+            <button class="digit-0">0</button>
+            <button class="equal-button">=</button>
         </div>
     </div>
 
@@ -41,6 +42,80 @@
         let numX;
         let operator;
         let numY;
+
+        const input = document.querySelector("input");
+
+        const operatorAdd = document.querySelector(".operator-add");
+        const digit1 = document.querySelector(".digit-1");
+        const digit2 = document.querySelector(".digit-2");
+        const digit3 = document.querySelector(".digit-3");
+
+        const operatorSubtract = document.querySelector(".operator-subtract");
+        const digit4 = document.querySelector(".digit-4");
+        const digit5 = document.querySelector(".digit-5");
+        const digit6 = document.querySelector(".digit-6");
+
+        const operatorMultiply = document.querySelector(".operator-multiply");
+        const digit7 = document.querySelector(".digit-7");
+        const digit8 = document.querySelector(".digit-8");
+        const digit9 = document.querySelector(".digit-9");
+
+        const operatorDivide = document.querySelector(".operator-divide");
+        const clearButton = document.querySelector(".clear-button");
+        const digit0 = document.querySelector(".digit-0");
+        const equalButton = document.querySelector(".equal-button");
+
+        operatorAdd.addEventListener("click", () => {
+            input.value += " + ";
+        })
+        digit1.addEventListener("click", () => {
+            input.value += "1";
+        })
+        digit2.addEventListener("click", () => {
+            input.value += "2";
+        })
+        digit3.addEventListener("click", () => {
+            input.value += "3";
+        })
+
+        operatorSubtract.addEventListener("click", () => {
+            input.value += " - ";
+        })
+        digit4.addEventListener("click", () => {
+            input.value += "4";
+        })
+        digit5.addEventListener("click", () => {
+            input.value += "5";
+        })
+        digit6.addEventListener("click", () => {
+            input.value += "6";
+        })
+
+        operatorMultiply.addEventListener("click", () => {
+            input.value += " * ";
+        })
+        digit7.addEventListener("click", () => {
+            input.value += "7";
+        })
+        digit8.addEventListener("click", () => {
+            input.value += "8";
+        })
+        digit9.addEventListener("click", () => {
+            input.value += "9";
+        })
+
+        operatorDivide.addEventListener("click", () => {
+            input.value += " / ";
+        })
+        clearButton.addEventListener("click", () => {
+            input.value = "";
+        })
+        digit0.addEventListener("click", () => {
+            input.value += "0";
+        })
+        equalButton.addEventListener("click", () => {
+            console.log("*calculate*")
+        })
 
         function operate(operator, x, y) {
             switch (operator) {
