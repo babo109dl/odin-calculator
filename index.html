@@ -115,11 +115,25 @@
         })
         equalButton.addEventListener("click", () => {
             const inputArr = input.value.split(" ");
-            numX = parseInt(inputArr[0]);
-            operator = inputArr[1];
-            numY = parseInt(inputArr[2]);
 
-            input.value = "" + operate(operator, numX, numY);
+            try {
+                numX = parseInt(inputArr[0]);
+                operator = inputArr[1];
+                numY = parseInt(inputArr[2]);
+
+                input.value = "" + operate(operator, numX, numY);
+
+                if (isNaN(input.value)) {
+                    throw new Error("WARNING! Wrong calculation formation");
+                }
+                if (numY === 0) {
+                    throw new Error("WARNING! Do not divide by 0");
+                }
+
+            } catch (error) {
+                alert(error);
+                input.value = "";
+            }
         })
 
         function operate(operator, x, y) {
