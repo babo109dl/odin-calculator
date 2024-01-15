@@ -114,23 +114,24 @@
             input.value += "0";
         })
         equalButton.addEventListener("click", () => {
-            console.log("*calculate*")
+            const inputArr = input.value.split(" ");
+            numX = parseInt(inputArr[0]);
+            operator = inputArr[1];
+            numY = parseInt(inputArr[2]);
+
+            input.value = "" + operate(operator, numX, numY);
         })
 
         function operate(operator, x, y) {
             switch (operator) {
                 case "+":
-                    add(x, y);
-                    break;
+                    return add(x, y);
                 case "-":
-                    subtract(x, y);
-                    break;
+                    return subtract(x, y);
                 case "*":
-                    multiply(x, y);
-                    break;
+                    return multiply(x, y);
                 case "/":
-                    divide(x, y);
-                    break;
+                    return divide(x, y);
             }
         }
 
